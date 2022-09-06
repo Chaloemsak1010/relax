@@ -1,0 +1,107 @@
+*{
+    margin: 0px;
+    width: auto;
+    height: auto;
+    scroll-behavior: smooth;
+}
+.container{
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: row;
+    justify-content: center;
+}
+.box{
+    margin: 20px;
+    background-color:#dafab1;
+    text-align: center;
+    border-radius: 10px;
+    width: 300px;
+    height: 300px;
+    border: solid 3px #528f47;
+}
+.box:hover{
+    box-shadow: 10px 10px 5px 20px #c7ea46,-10px -10px 5px 20px #c7ea46;
+    opacity: 0.9;
+    cursor: pointer;
+    transition: 0.8s;
+}
+#box1{
+    background-image:url("img/fapa.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+#box2{
+    background-image:url("img/rain.png");
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+#box3{
+    background-image:url("img/water.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+#box4{
+    background-image:url("img/waterfall.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#box5{
+    background-image:url("img/whale.png");
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+#box6{
+    background-image:url("img/woodpecker.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+audio{
+    width: 300px;
+    height: 300px;
+    z-index: 1;
+}
+body{
+    background: linear-gradient(to right,#528f47,#edf2b0);
+    z-index: -1;
+}
+.top #maintext {
+    text-align: center;
+    font-size: 50px;
+    margin-top: 30px;
+}
+footer{
+    text-align: center;
+}
+footer h1{
+    margin-top: 50px;
+    color: black;
+    text-decoration: underline;
+    text-shadow: 2px 2px #528f47;
+}
+footer a img{
+    margin-top: 10px;
+    width: 300px;
+    height: 150px;
+}
+footer a{
+    text-decoration: none;
+}
+.social-links img{
+    height: 30px;
+    margin: 20px;
+    cursor: pointer;
+    
+}
+.social-links{
+    text-align: center;
+    margin-bottom: 40px;
+}
+/* กำหนดชนิดข้อความให้กับลิงค */
+.social-links a{
+    text-decoration: none;
+}
+#arrow a img{
+    width: 100px;
+    height: 100px;
+    margin-left: 85%;
+}
