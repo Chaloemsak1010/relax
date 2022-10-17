@@ -1,0 +1,83 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace methodtest
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] scoreMath = { 52, 96, 85, 78, 98, 52, 12 };
+            int[] scorePhysic = { 65, 52, 84, 52, 46 };
+            int[] scoreEnglish = { 12, 21, 21, };
+            Console.Write("Score of Math :");
+            displayscore(scoreMath);
+            Console.WriteLine("Max score of Math = {0}", FindMaxInArray(scoreMath));
+            Console.WriteLine("Min score of Math = {0}", FindMinInArray(scoreMath));
+
+
+            Console.Write("Score of Physic :");
+            displayscore(scorePhysic);
+            Console.WriteLine("Max score of Physic = {0}", FindMaxInArray(scorePhysic));
+            Console.WriteLine("Min score of Physic = {0}", FindMinInArray(scoreMath));
+
+
+
+            Console.Write("Score of English :");
+            displayscore(scoreEnglish);
+            Console.WriteLine("Max score of English = {0}", FindMaxInArray(scoreEnglish));
+            Console.WriteLine("Min score of English = {0}", FindMinInArray(scoreMath));
+
+
+        }
+        ///Method แสดง score 
+        static void displayscore(int[] arr)
+        {
+            Console.Write("{");
+            for (int i = 0; i < arr.Length; i++)
+            {   
+                if (i < arr.Length - 1)
+                {
+                    Console.Write(arr[i] + ",");
+                }
+                else
+                {
+                    Console.Write(arr[i]);
+                }
+            }
+            Console.Write("}");
+            Console.WriteLine();
+
+
+        }
+        ///Mthod หาค่าสูงสุด
+        static int FindMaxInArray(int[]arr)
+        {
+            int maxValue = arr[0];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] > maxValue)
+                {
+                    maxValue = arr[i];
+                }
+            }
+            return maxValue;
+        }
+        ///Method หาค่าต่ำสุด
+        static int FindMinInArray(int[] arr)
+        {
+            int minValue = arr[0];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] < minValue)
+                {
+                    minValue = arr[i];
+                }
+            }
+            return minValue;
+        }
+    }
+}
