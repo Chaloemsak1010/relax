@@ -17,19 +17,29 @@ namespace methodtest
             displayscore(scoreMath);
             Console.WriteLine("Max score of Math = {0}", FindMaxInArray(scoreMath));
             Console.WriteLine("Min score of Math = {0}", FindMinInArray(scoreMath));
+            newArray(scoreMath);
 
+            /*
+            int[] newarray = newArray(scoreMath);
+            for (int i = 0; i < newarray.Length; i++)
+            {
+                Console.WriteLine(newarray[i]);
+            }
+            */
 
             Console.Write("Score of Physic :");
             displayscore(scorePhysic);
             Console.WriteLine("Max score of Physic = {0}", FindMaxInArray(scorePhysic));
-            Console.WriteLine("Min score of Physic = {0}", FindMinInArray(scoreMath));
+            Console.WriteLine("Min score of Physic = {0}", FindMinInArray(scorePhysic));
+            newArray(scorePhysic);
 
 
 
             Console.Write("Score of English :");
             displayscore(scoreEnglish);
             Console.WriteLine("Max score of English = {0}", FindMaxInArray(scoreEnglish));
-            Console.WriteLine("Min score of English = {0}", FindMinInArray(scoreMath));
+            Console.WriteLine("Min score of English = {0}", FindMinInArray(scoreEnglish));
+            newArray(scoreEnglish);
 
 
         }
@@ -47,9 +57,11 @@ namespace methodtest
                 {
                     Console.Write(arr[i]);
                 }
+             
             }
             Console.Write("}");
             Console.WriteLine();
+           
 
 
         }
@@ -79,5 +91,20 @@ namespace methodtest
             }
             return minValue;
         }
+        ///Method รับและส่งค่าออกไป
+        static void newArray(int []arr)
+        {
+            int[] newArrayArr = new int[arr.Length];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                newArrayArr[i] = arr[i]+1000;
+            }
+            for (int i = 0; i < newArrayArr.Length; i++)
+            {
+                Console.WriteLine(newArrayArr[i]);
+            }
+
+        }
     }
 }
+
