@@ -1,0 +1,41 @@
+using System;
+namespace Linear
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //algorithm LinearSearch
+            //arrays
+            int[] arr = new int[] {1,2,3,4,5};
+            //input
+            Console.Write("Enter your number for search:");
+            int n = int.Parse(Console.ReadLine());
+            // use method and store the result at new variable
+            int result = Search(arr, n);
+            //condition for output
+            if (result < 0)
+            {
+                Console.WriteLine("{0} Not found index",n);
+            }
+            else
+            {
+                Console.WriteLine("{0} Number index is {1}",n,result);
+            }
+        }
+        //Method Search index have or not have in arrays
+        //input arrays and number
+        static int Search(int[]arr,int x)
+        {
+     
+            for(int i = 0;i<arr.Length;i++)
+                if(arr[i]==x)
+                {
+                    //return value arrays at i
+                    return i;
+                }
+            //return -1 for if not found
+            return -1;
+        }
+    }
+}
