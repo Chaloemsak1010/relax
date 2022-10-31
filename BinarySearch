@@ -46,3 +46,59 @@ namespace BinarySearch
         }
     }
 }
+
+
+2nd
+######################################################
+using System;
+
+namespace BinarySearch
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //หลักการ คือ จะแบ่งข้อมูลออกเป็นครึ่ง และค่อยเปรียบเทียบค่าที่ป้อนเข้ามากับ ค่าที่อยู่ตรงกลางของข้อมูล
+            //ข้อจำกัด คือ array จะต้องเรียงจาก น้อยไปมาก
+            //BinarySearch
+            //ประกาศ arrays
+            var arr = new[] { 22, 43, 65, 66, 67, 68, 70, 99, 100 , 111 }; //10
+            //                0   1   2   3   4   5   6   7   8      9
+            //input ตัวเลขที่ต้องการหา index
+            Console.Write("Enter Number for Search:");
+            int n = int.Parse(Console.ReadLine());
+            // สร้างตัวแปรมารับค่า จาก BinarySearch
+            int result = BinarySearch(arr, n);
+            if (result < 0)
+            {
+                Console.WriteLine("{0} Not found!!!",n);
+            }
+            else
+            {
+                Console.WriteLine("{0} found index at {1}",n,result);
+            }
+
+        }
+        //method หาเลข index โดยรับค่า array และ เลขที่ต้องการหา index
+        static int BinarySearch(int[]arr,int x)
+        {
+            int left = 0;
+            int right = arr.Length;
+            while (left < right)
+            {
+                int mid = (left + right) / 2; //5
+                if (arr[mid] == x) return mid;
+                else if (arr[mid] < x)
+                {
+                    right += 2;
+                }
+                else
+                {
+                    left -= 2;
+                }
+            }
+            return -1;
+
+        }
+    }
+}
