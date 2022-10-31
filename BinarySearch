@@ -1,0 +1,48 @@
+using System;
+namespace BinarySearch
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //algorithm BinarySearch
+            //arrays
+            int[] arr = new int[] {1,2,3,4,5};
+            //input
+            Console.Write("Enter your number for search:");
+            int n = int.Parse(Console.ReadLine());
+            // use method and store the result at new variable
+            int result = Search(arr, n);
+            //condition for output
+            if (result < 0)
+            {
+                Console.WriteLine("{0} Not found index",n);
+            }
+            else
+            {
+                Console.WriteLine("{0} Number index is {1}",n,result);
+            }
+        }
+        //Method Search index have or not have in arrays
+        //input arrays and number
+        static int Search(int[]arr,int x)
+        {
+            int left = 0;
+            int right = arr.Length;
+            while (left < right)
+            {
+                int mid = (right + left) / 2; //3
+                if (arr[mid] == x) return mid;
+                else if (arr[mid] < x)
+                {
+                    right += 1;
+                }
+                else if (arr[mid] > x)
+                {
+                    right = mid;
+                }
+            }
+            return -1;
+        }
+    }
+}
