@@ -1,1 +1,28 @@
 https://www.koderdojo.com/blog/depth-first-search-algorithm-in-csharp-and-net-core
+
+#########################################
+using System;
+namespace bas
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Enter your number:");
+            int number = int.Parse(Console.ReadLine()); //5 == 5+4+3+2+1=  ==10
+            if (number > 1)
+            {
+                Console.WriteLine("Result = {0}", number * 2);
+            }
+            else if (number < 0)
+            {
+                int num = ((number * -1)*2)+1;
+                Console.WriteLine("Result = {0}", num);
+            }
+            else
+            {
+                Console.WriteLine("Result = {0}", number);
+            }
+        }
+    }
+}
