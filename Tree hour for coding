@@ -1,0 +1,60 @@
+using System;
+using System.Linq;
+
+
+namespace test099
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //จุดประสงค์ หา char ของ number ที่ป้อนเข้ามา
+            // 10 == 10+9+8+7+6+5+4+3+2+1= == 21 ตัว
+            //10
+            Console.Write("Enter your number:");
+            string number = Convert.ToString(Console.ReadLine());
+            int count = Convert.ToInt32(number);
+
+
+            if (count<10)
+            {
+                Console.WriteLine("Result=" + count*2);
+
+            }
+            else
+            {
+                double num2 = Convert.ToDouble(number);
+                double n = number.Length - 1;
+                // n=1
+                double nini = Math.Pow(10, n) - 1;
+                //Console.WriteLine(nini); 99
+                //post
+                int n2 = Convert.ToInt32(n);
+                string key = string.Concat(Enumerable.Repeat("8", n2));
+                int key2 = Convert.ToInt32(key);
+                double result = ((num2 - nini) * (n + 2)) + (((Math.Pow(10, n) * n) + key2));//18
+                Console.WriteLine("Result=" + result);
+            }
+            //Console.WriteLine(nini); 99
+            //post
+            /*
+            double result = ((num2 - nini) * (n + 2)) + (((Math.Pow(10, n) * n) + ((9*(n+2)))*(Math.Pow(10,n)) ));//18
+            Console.WriteLine("Result=" + result);
+        }
+
+        /*
+        double num2 = Convert.ToDouble(number);
+        double n = number.Length-1;
+        // n=1
+        double nini = Math.Pow(10, n)-1;
+        //Console.WriteLine(nini); 99
+        //post
+        int n2 = Convert.ToInt32(n);
+        string key = string.Concat(Enumerable.Repeat("8",n2));
+        int key2 = Convert.ToInt32(key);
+        double result = ((num2 - nini) * (n + 2))+(((Math.Pow(10,n)*n)+key2));//18
+        Console.WriteLine("Result="+result);
+        */
+        }
+    }
+}
