@@ -16,7 +16,11 @@ namespace pamNumber
 
             double n = Convert.ToDouble(Console.ReadLine());
             //double m1 = 2;
-            if (n % 2 <1 || n % 3 < 1 || n % 5 < 1 || n % 7 < 1 )
+            if (n == 2 || n == 3 || n  == 5 || n  == 7)
+            {
+                Console.WriteLine("True prime number ");
+            }
+            else if (n % 2 == 0 || n % 3 == 0 || n % 5 == 0 || n % 7 == 0)
             {
                 Console.WriteLine("False not a prime number ");
             }
