@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace pamNumber
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // O(1)
+            Console.Write("Enter Number :");
+            //int n = Convert.ToInt32(Console.ReadLine());
+
+            double n = Convert.ToDouble(Console.ReadLine());
+            //double m1 = 2;
+            if (n % 2 <1 || n % 3 < 1 || n % 5 < 1 || n % 7 < 1 )
+            {
+                Console.WriteLine("False not a prime number ");
+            }
+            else
+            {
+                Console.WriteLine("True prime number ");
+            }
+        }
+    }
+}
