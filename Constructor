@@ -1,0 +1,65 @@
+Page 1
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace defult_constructur
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //object
+            Employee employee = new Employee();
+            Employee emp1 = new Employee("mike", 33332);
+            // การเรียกใช้งาน method โดยตรง
+            emp1.ShowData();
+            Console.WriteLine("###############################");
+            Employee emp2 = new Employee("bas", 2323323);
+            emp2.ShowData();
+            Console.ReadKey();
+        }
+    }
+}
+
+Page 2
+using System;
+using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace defult_constructur
+{
+    internal class Employee
+    {
+        //fied Variable
+        private string name;
+        private int salary;
+        // default constructor
+        public Employee()
+        {
+            Console.WriteLine("Create Empty Object");
+        }
+        // parameter constructor
+        public Employee(string name, int salary)
+        {
+            this.name = name;
+            this.salary = salary;
+            //ShowData();
+        }
+        // method in class Employee
+        public void ShowData()
+        {
+            Console.WriteLine("Name = " + this.name);
+            Console.WriteLine("Salary = " + this.salary);
+
+        }
+
+    }
+}
+
