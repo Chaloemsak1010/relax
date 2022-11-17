@@ -1,0 +1,124 @@
+using System;
+namespace Project
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //Variable
+            int[] price_coffee = new int[] { 50, 99, 70, 80, 120 };
+            int[] price_food = new int[] { 50, 60, 80, 30, 100 };
+            int link = 0;
+            do
+            {
+                // รับจำนวนคนเข้ามา เพื่อสร้างขนาด array ตามจำนวนคน
+                int count = display1();
+                Console.WriteLine();
+                bool check = count < 1;
+                if (check)
+                {
+                    goto m;
+                m:
+                    Console.WriteLine("Please enter positive integers only.");
+                    // เขียนทับตัวแปรเดิม อัปเดต
+                    count = display1();
+                }
+                int[] link_menucoffee = new int[count];
+                int[] link_menufood = new int[count];
+                int[] tatal = new int[count];
+                // ชื่อ
+                string[] name_customer = new string[count];
+                string[] menucoffee = new string[5] { "Espresso", "Americano", "Latte", "Cappuccino", "Mocca" };
+                string[] menufood = new string[5] { "Noodles", "Fried rice", "Crispy Pork Basil with Rice", "Omelette Rice", "Spicy Seafood Salad" };
+                // รับจำนวนคนเข้ามา และชื่อ
+                for (int i = 0; i < count; i++)
+                {
+                    Console.Write($"{i + 1}.Name = ");
+                    name_customer[i] = Console.ReadLine();
+                    Console.WriteLine();
+                    link_menucoffee[i] = display2();
+                    Console.WriteLine();
+                    link_menufood[i] = display3();
+                    Console.WriteLine();
+                    tatal[i] = price_coffee[link_menucoffee[i]] + price_food[link_menufood[i]];
+                }
+                Console.WriteLine("All items are summarized as follows:");
+                Console.WriteLine("No".PadRight(2) + "   Name".PadRight(18) + "List".PadRight(40) + "TOTAL");
+                //sumary
+                for (int i = 0; i < count; i++)
+                {
+                    Console.WriteLine($"{i + 1}.Name {name_customer[i]}".PadRight(20) + $"{menucoffee[link_menucoffee[i]]} and {menufood[link_menufood[i]]}".PadRight(40) + tatal[i]);
+                }
+                link = end();
+                Console.WriteLine();
+            } while (link == 1);
+        }
+        // show 1 return count people
+        static int display1()
+        {
+            Console.WriteLine("====> Wellcome_To_My_Shop <=====");
+            Console.WriteLine("How many people are you together?");
+            int count = int.Parse(Console.ReadLine());
+            return count;
+        }
+        //show 2 coffee_link
+        static int display2()
+        {
+            //Console.WriteLine("====> Wellcome_To_My_CoffeeShop <=====");
+            Console.WriteLine("Menu_Drink_To_Day...");
+            Console.WriteLine("1.Espresso Price = 50 \n2.Americano Price = 99 \n3.Latte Price = 70 \n4.Cappuccino Price = 80 \n5.Mocca Price = 120 ");
+            Console.WriteLine("Please_Enter_The_Menu_Number_You_Want...?");
+            int choice = int.Parse(Console.ReadLine());
+            // เช็ค ตัวเลขที่ป้อนเข้ามา
+            bool check = choice < 1 || choice > 5 ;
+            switch (check)
+            {
+                case true:
+                    goto m;
+                m:
+                    Console.WriteLine();
+                    Console.WriteLine("Please enter number 1-5 only.");
+                    // เขียนทับตัวแปรเดิม อัปเดต
+                    display2();
+                    break;
+                case false:
+                    return choice - 1;
+                    // -1 เพราะ ตอนที่เลือกในหน้า command เป็น 1
+            }
+            return choice;
+        }
+        //show 3 food_link
+        static int display3()
+        {
+            Console.WriteLine("Menu_Food_To_Day...");
+            Console.WriteLine("1.Noodles = 50 \n2.Fried rice = 60 \n3.Crispy Pork Basil with Rice = 80 \n4.Omelette Rice = 30 \n5.Spicy Seafood Salad = 100 ");
+            Console.WriteLine("Please_Enter_The_Menu_Number_You_Want...?");
+            int choice = int.Parse(Console.ReadLine());
+            Console.WriteLine(choice);
+            bool check = choice < 1 || choice > 5;
+            switch (check)
+            {
+                case true:
+                    goto m;
+                m:
+                    Console.WriteLine();
+                    Console.WriteLine("Please enter number 1-5 only.");
+                    // เขียนทับตัวแปรเดิม อัปเดต
+                    display3();
+                    break;
+                case false:
+                    return choice -1;
+            }
+            return choice ;
+        }
+        // return key สำหรับจบโปรแกรม
+        static int end()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Want to start a new program?");
+            Console.WriteLine("1.Yes\n2.No");
+            int link = Convert.ToInt32(Console.ReadLine());
+            return link;
+        }
+    }
+}
